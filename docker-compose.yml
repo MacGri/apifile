@@ -23,6 +23,7 @@ services:
       - "9000:9000"
     volumes:
       - ${APP_PATH_HOST}:${APP_PATH_CONRAINER}
+    working_dir: ${APP_PATH_CONRAINER}
 
   db:
     image: postgres:alpine
