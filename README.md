@@ -1,5 +1,5 @@
 # apifile
-1) На машине должен стоять docker compose и git
+1) На машине должны стоять docker-compose и git
 2) Копируем проект: `git clone https://github.com/MacGri/apifile.git`
 3) Переходим в директорию проекта: `cd apifile/project`
 4) Копированием делаем личные настройки: `cp .env.example .env`
