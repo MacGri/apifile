@@ -1,1 +1,7 @@
-/logs/
+/logs
+/databases
+/nginx
+docker-compose.yml
+/.idea
+README.md
+/.env
