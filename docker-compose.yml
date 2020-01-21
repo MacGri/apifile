@@ -11,8 +11,7 @@ services:
     volumes:
       - ${APP_PATH_HOST}:${APP_PATH_CONRAINER}
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - ./logs/nginx-error.log:/var/log/nginx/error.log
-      - ./logs/nginx-access.log:/var/log/nginx/access.log
+      - ./logs:/var/log/nginx/
 
   phpfpm:
     image: php:fpm-alpine
