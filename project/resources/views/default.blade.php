@@ -6,7 +6,7 @@
 
         <h1>Загрузка файлов</h1>
 
-        <image-upload></image-upload>
+        <file-upload :files="{{$downloads??'[]'}}"></file-upload>
     </div>
 
 @endsection

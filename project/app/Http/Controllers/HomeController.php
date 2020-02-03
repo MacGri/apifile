@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Download;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $userId = \Auth::id();
+        $downloads = Download::where('user_id', $userId)->get();
+        return view('default')->with('downloads', $downloads);
     }
 }

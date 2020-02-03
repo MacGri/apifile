@@ -12,11 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('default');
+    return view('welcome');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::post('/upload', 'Download\ImagesController@upload')->name('image.upload');
+Route::middleware(['auth'])->group(function (){
+    Route::resource('/download', 'Download\FileUploadController')->only(['store', 'show', 'update', 'destroy']);
+    Route::resource('/folders', 'Folders\FolderController')->only(['store', 'update', 'destroy']);
+    Route::get('/home', 'HomeController@index')->name('home');
+});
